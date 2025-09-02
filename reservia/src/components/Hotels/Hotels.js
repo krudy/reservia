@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Hotel from "./Hotel/Hotel"
 
 
 class Hotels extends Component {
@@ -6,6 +7,8 @@ class Hotels extends Component {
         return(
             <div>
                 hotels
+                <Hotel/>
+                <Hotel/>
             </div>
         )
     }
