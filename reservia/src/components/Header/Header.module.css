@@ -1,7 +1,10 @@
-.site-header{
+.header{
     height: 50px;
     background-color: #cdcdcd;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.input{
+    width: calc(100% - 20px);
 }
