@@ -1,13 +1,11 @@
 import React from 'react';
 import styles from './Header.module.css'
+import Searchbar from './Searchbar/Searchbar';
 
 function Header() {
     return (
         <header className={styles.header}>
-            <div>
-                <input className={styles.input} text='text' placeholder='Search...'></input>
-                <button>Search</button>
-            </div>
+          <Searchbar/>
         </header>
     );
 }
