@@ -1,12 +1,15 @@
 import React from 'react'
-import styles from './Searchbar.module.css'
 
-function Searchbar(){
-    return(
-          <div>
-                <input className={styles.input} text='text' placeholder='Search...'></input>
-                <button>Search</button>
-            </div>
+
+function Searchbar() {
+    return (
+
+        <div className='d-flex'>
+
+            <input className={`form-control`} text='text' placeholder='Search...'></input>
+            <button className='btn btn-primary'>Search</button>
+
+        </div>
     )
 }
 
