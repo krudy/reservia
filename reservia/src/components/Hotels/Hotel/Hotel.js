@@ -15,7 +15,7 @@ function Hotel() {
                         <div className="row">
                             <div className="col">
                                 <p className={`${styles.title}`}>Pensjonat</p>
-                                <span class="badge bg-light text-dark">Warszawa</span>
+                                <span className="badge bg-light text-dark">Warszawa</span>
                             </div>
                             <div className="col text-end">
                                 <h5>Ocena: 8.3</h5>
