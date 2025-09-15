@@ -11,8 +11,13 @@ function Searchbar() {
 
     const updateTerm = (event) => {
         setTerm(event.target.value);
-        
-        
+           
+    }
+
+    const onKeyDownHandler = (event) => {
+        if(event.key === 'Enter'){
+            search();
+        }
     }
 
     return (
@@ -21,6 +26,7 @@ function Searchbar() {
 
             <input 
                 value={term}
+                onKeyDown={onKeyDownHandler}
                 onChange={updateTerm}
                 className="form-control" 
                 text='text' 
