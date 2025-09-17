@@ -2,7 +2,7 @@ import React from "react";
 import styles from './Hotel.module.css'
 import hotelImg from '../../../assets/images/hotel.jpg'
 
-function Hotel() {
+function Hotel(props) {
     return (
         <div className={`${styles.hotel} card`}>
             <div className="card-body">
@@ -14,11 +14,11 @@ function Hotel() {
                     <div className="col-8">
                         <div className="row">
                             <div className="col">
-                                <p className={`${styles.title}`}>Pensjonat</p>
-                                <span className="badge bg-light text-dark">Warszawa</span>
+                                <p className={`${styles.title}`}>{props.name}</p>
+                                <span className="badge bg-light text-dark">{props.city}</span>
                             </div>
                             <div className="col text-end">
-                                <h5>Ocena: 8.3</h5>
+                                <h5>Ocena: {props.rating} </h5>
                                 <a href="#!" className="btn btn-primary mt-2 px-5 ">show</a>
 
                                
@@ -26,7 +26,7 @@ function Hotel() {
                         </div>
                     </div>
                     <div className="col-12">
-                        <p className={`${styles.description}`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae architecto pariatur accusamus non nisi fugit qui neque, voluptate omnis consectetur laboriosam eos cumque deserunt natus reiciendis totam. Esse, error a?</p>
+                        <p className={`${styles.description}`}>{props.description}</p>
                         
                     </div>
                 </div>
