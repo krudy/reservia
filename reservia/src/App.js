@@ -6,9 +6,8 @@ import Hotels from './components/Hotels/Hotels'
 
 class App extends Component {
 
- state = {
-      hotels: [
-        {
+hotels = [
+  {
           id: 1,
           name: 'Pod akacjami',
           city: 'Warszawa',
@@ -25,13 +24,23 @@ class App extends Component {
           image: '',
 
         }
-      ] 
+]
+
+ state = {
+      hotels: this.hotels,
+  }
+
+  searchHandler(term) {
+    console.log('searching...' + term);
+    const hotels = [...this.hotels].filter((x) => x.name.toLowerCase().includes(term.toLowerCase()));
+    this.setState({hotels});
+    
   }
 
   render() {
     return (
       <div className="App container">
-        <Header />
+        <Header onSearch={(term) => this.searchHandler(term)}/>
         <Menu />
         <Hotels hotels={this.state.hotels} />
       </div>
