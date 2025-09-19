@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
 import Hotels from './components/Hotels/Hotels'
+import LoadingIcon from './components/UI/LoadingIcon/LoadingIcon';
 
 class App extends Component {
 
@@ -28,6 +29,7 @@ hotels = [
 
  state = {
       hotels: this.hotels,
+      loading: true,
   }
 
   searchHandler(term) {
@@ -37,12 +39,25 @@ hotels = [
     
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        hotels: this.hotels,
+        loading: false,
+      })
+    }, 1000);
+  }
+
   render() {
     return (
       <div className="App container">
         <Header onSearch={(term) => this.searchHandler(term)}/>
         <Menu />
-        <Hotels hotels={this.state.hotels} />
+        {this.state.loading ? (
+          <LoadingIcon />
+        ) : (
+          <Hotels hotels={this.state.hotels} />
+        )}
       </div>
     );
   }
